@@ -1,0 +1,42 @@
+{% extends 'inicio.html' %}
+
+{% block contenido %}
+
+<table>
+<thead>
+    <td>
+        Cedula
+    </td>
+    <td>
+        Nombres
+    </td>
+    <td>
+        Apellidos
+    </td>
+    <td>
+        Edad
+    </td>
+    <td>
+        Genero
+    </td>
+    <td>
+        Acciones
+    </td>
+</thead>
+<tbody>
+{% for i in lista%}
+<tr>
+    <td>{{i.cedula}}</td>
+    <td>{{i.nombres}}</td>
+    <td>{{i.apellidos}}</td>
+    <td>{{i.edad}}</td>
+    <td>{{i.genero}}</td>
+    <td><a class = "btn waves-effect waves-light" href = "modificar?cedula={{i.cedula}}" >Modificar</a></td>
+    <td><a class = "btn waves-effect waves-light" href = "eliminar?cedula={{i.cedula}}">Eliminar</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock%}
+<!--{%load staticfiles%}
+<img src="{%static 'img/logo.png'%}">-->
